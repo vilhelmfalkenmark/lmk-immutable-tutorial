@@ -35,8 +35,6 @@ const people = [
 ];
 
 
-
-
 // //////////////////////////////////////////////
 /*
 Task 1.
@@ -46,7 +44,11 @@ than 30
 */
 // /////////////////////////////////////////////
 
-
+// const filterFunction = person => {
+//   return person.age > 30
+// }
+// const task1 = people.filter(filterFunction);
+// console.log(task1);
 
 // //////////////////////////////////////////////
 /*
@@ -56,8 +58,13 @@ Create an array where we take everything from
 The original array. Dont change anything
 */
 // /////////////////////////////////////////////
+// const task2 = Object.assign([], people);
+// const task2 = [...people];
+// const task2 = people.map(person => person)
+// const task2 = people.concat()
+// const task2 = people.concat(5).filter(person => typeof(person) === "object");
 
-
+// console.log(task2);
 
 // //////////////////////////////////////////////
 /*
@@ -67,6 +74,17 @@ Create an array where we add Carl
 with the help of the person Object
 */
 // /////////////////////////////////////////////
+// const task3 = Object.assign({}, person, {
+//   name: "Carl"
+// });
+
+// const array = people.concat(task3)
+// const array = people.concat(Object.assign({}, person, {
+//   name: "Carl"
+// }));
+// const array = people.concat({...person, name: "Carl"});
+
+// console.log(array);
 
 
 // //////////////////////////////////////////////
@@ -78,18 +96,42 @@ person to Mike if that person climbs
 otherwise name it Hans
 */
 // /////////////////////////////////////////////
+// const task4 = people.map(person => {
+//   if(person.climbs === true) {
+//     return Object.assign({}, person, {
+//       name: "Mike"
+//     })
+//   }
+//   return Object.assign({}, person, {
+//     name: "Hans"
+//   })
+// })
 
+// const task4 = people.map(person => {
+//   if(person.climbs === true) {
+//     return {...person, name: "Mike"}
+//   }
+//   return {...person, name: "Hans"}
+// });
 
+// const task4 = people.map(person =>
+//   person.climbs ?
+//   {...person, name: "Mike"} :
+//   {...person, name: "Hans"}
+// );
 
+// console.log(task4);
 // //////////////////////////////////////////////
 /*
 Task 5.
 
 Create an array where we remove everyone that doesnt climb.
-After that add florian to the new array
+After that add Florian to the new array
 */
 // /////////////////////////////////////////////
+// const task5 = people.filter(person_I => person_I.climbs).concat({...person, name: "Florian", climbs: true});
 
+// console.log(task5);
 
 // //////////////////////////////////////////////
 /*
@@ -100,6 +142,11 @@ of everyone younger than 35 (< 35 )
 */
 // /////////////////////////////////////////////
 
+// const task6 = people.map(person => person.age).filter(age => age < 35).reduce((accumulator, age) => {
+//   return accumulator + age;
+// });
+
+// console.log(task6);
 
 // //////////////////////////////////////////////
 /*
